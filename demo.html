@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="product-info text-left">
+    <h3 class="name"><a
+            href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['productName']); ?></a>
+    </h3>
+    <div class="rating rateit-small"></div>
+    <div class="description"></div>
+
+    <div class="product-price">
+		<span class="price">
+		    Rs.<?php echo htmlentities($row['productPrice']); ?>
+        </span>
+        <span class="price-before-discount">Rs.<?php echo htmlentities($row['productPriceBeforeDiscount']); ?>	</span>
+    </div>
+</body>
+</html>

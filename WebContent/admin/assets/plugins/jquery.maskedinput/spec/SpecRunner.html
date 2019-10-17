@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Masked Input Plugin Tests</title>
+
+    <!--Jasmine-->
+    <link href="lib/jasmine/jasmine.css" rel="stylesheet" type="text/css">
+    <script src="lib/jasmine/jasmine.js" type="text/javascript"></script>
+    <script src="lib/jasmine/jasmine-html.js" type="text/javascript"></script>
+
+    <!--Jasmine Species-->
+    <link href="lib/jasmine-species/calm.css" rel="stylesheet" type="text/css">
+    <script src="lib/jasmine-species/jasmine-grammar.js" type="text/javascript"></script>
+    <script src="lib/jasmine-species/jasmine-reporting.js" type="text/javascript"></script>
+
+    <!--My Stuff-->
+    <script src="lib/matchers.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function importGrammar(g) {
+            for (var prop in g) {
+                if (g.hasOwnProperty(prop))
+                    window[prop] = g[prop];
+
+            }
+        }
+
+        importGrammar(jasmine.grammar.FeatureStory);
+        importGrammar(jasmine.grammar.GWT);
+
+        var input;
+        beforeEach(function () {
+            input = $("<input />").appendTo("body").focus();
+        });
+        afterEach(function () {
+            input.remove();
+        });
+
+    </script>
+
+    <!-- include source files here... -->
+    <script src="../lib/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.keymasher.js" type="text/javascript"></script>
+    <script src="../dist/jquery.maskedinput.min.js" type="text/javascript"></script>
+
+    <!-- Specs -->
+    <script src="Setup.Spec.js" type="text/javascript"></script>
+    <script src="Raw.Spec.js" type="text/javascript"></script>
+    <script src="Focus.Spec.js" type="text/javascript"></script>
+    <script src="Typing.Spec.js" type="text/javascript"></script>
+    <script src="Backspace.Spec.js" type="text/javascript"></script>
+    <script src="Delete.Spec.js" type="text/javascript"></script>
+    <script src="Escape.Spec.js" type="text/javascript"></script>
+    <script src="Paste.Spec.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+    var jasmineEnv = jasmine.getEnv();
+    var styledReporter = new jasmine.reporting.StyledHtmlReporter();
+
+    jasmineEnv.addReporter(styledReporter);
+
+    jasmineEnv.specFilter = function (spec) {
+        return styledReporter.specFilter(spec);
+    };
+    jasmine.getEnv().execute();
+</script>
+
+</body>
+</html>

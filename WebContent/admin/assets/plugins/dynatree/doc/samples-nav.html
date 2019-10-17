@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <meta content="noindex,follow" name="robots">
+    <script src="../jquery/jquery.js" type="text/javascript"></script>
+    <script src="../jquery/jquery-ui.custom.js" type="text/javascript"></script>
+    <script src="../jquery/jquery.cookie.js" type="text/javascript"></script>
+
+    <link href="../src/skin-vista/ui.dynatree.css" rel="stylesheet" type="text/css">
+    <script src="../src/jquery.dynatree.js" type="text/javascript"></script>
+    <script src="sample.js" type="text/javascript"></script>
+    <title>Dynatree - Example Browser</title>
+
+    <style type="text/css">
+        body {
+            background-color: #39414A;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: smaller;
+            background-image: url("nav_bg.png");
+            background-repeat: repeat-x;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div#tree {
+            position: absolute;
+            height: 95%;
+            width: 95%;
+            padding: 5px;
+            margin-right: 16px;
+        }
+
+        ul.dynatree-container {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        ul.dynatree-container a {
+            color: white;
+            border: 1px solid transparent;
+            background-color: transparent;
+        }
+
+        ul.dynatree-container a:hover {
+            background-color: transparent;
+        }
+
+        ul.dynatree-container a:focus, span.dynatree-focused a:link {
+            background-color: gray;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            // --- Initialize sample trees
+            $("#tree").dynatree({
+                autoFocus: true,
+//			persist: true,
+                minExpandLevel: 2,
+                onFocus: function (node) {
+                    // Auto-activate focused node after 1 second
+                    if (node.data.href) {
+                        node.scheduleAction("activate", 1000);
+                    }
+                },
+                onBlur: function (node) {
+                    node.scheduleAction("cancel");
+                },
+                onActivate: function (node) {
+                    if (node.data.href) {
+                        window.open(node.data.href, node.data.target);
+                    }
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="tree">
+    <ul>
+        <li><a href="dynatree-doc.html" target="_blank">Documentation</a>
+        <li><a href="http://dynatree.googlecode.com" target="_blank">jquery.dynatree.js</a>
+        <li class="folder expnded"> Examples
+            <ul>
+                <li><a href="sample-default.html" target="content">Default options</a>
+                <li><a href="sample-quick.html" target="content">Init from JS object</a>
+                <li><a href="sample-init-lazy.html" target="content">Init from external data</a>
+                <li><a href="sample-iframe.html" target="content">URL navigation and &lt;iframe></a>
+                <li><a href="sample-api.html" target="content">Programming API</a>
+                <li><a href="sample-select.html" target="content">Checkbox &amp; select</a>
+                <li><a href="sample-theming.html" target="content">Theming</a>
+                <li><a href="sample-persist.html" target="content">Persistence</a>
+                <li><a href="sample-events.html" target="content">Event handling</a>
+                <li><a href="sample-effects.html" target="content">Effects</a>
+                <li class="folder">Drag'n'drop
+                    <ul>
+                        <li><a href="sample-dnd.html" target="content">Drag'n'drop</a>
+                        <li><a href="sample-dnd2.html" target="content">Drag'n'drop 2</a>
+                        <li><a href="sample-dnd3.html" target="content">Drag'n'drop 3</a>
+                    </ul>
+                <li><a href="sample-contextmenu.html" target="content">Context menu, Copy/paste</a>
+                <li><a href="sample-minexpand.html" target="content">Fixed expand level</a>
+                <li><a href="sample-lazy.html" target="content">Lazy loading</a>
+                <li><a href="sample-form.html" target="content">Embed in forms</a>
+                <li><a href="sample-multiline.html" target="content">Large nodes</a>
+                <li class="folder">Tweaks
+                    <ul>
+                        <li><a href="test-table.html" target="content">Column layout</a>
+                        <li><a href="sample-inline-edit.html" target="content">Edit nodes</a>
+                        <li><a href="sample-rtl.html" target="content">RTL</a>
+                    </ul>
+                <li class="folder">Test
+                    <ul>
+                        <li><a href="test-bench.html" target="content">Benchmark large trees</a>
+                        <li><a href="test-latest.html" target="content">Latest jQuery</a>
+                        <li><a href="sample-pyserver.html" target="content">Local server</a>
+                        <li class="folder">DTD
+                            <ul>
+                                <li><a href="test-dtd-none.html" target="content">No DTD</a>
+                                <li><a href="test-dtd-html4-transitional.html" target="content">HTML4 transitional</a>
+                                <li><a href="test-dtd-html4-strict.html" target="content">HTML4 strict</a>
+                                <li><a href="test-dtd-html5.html" target="content">HTML5</a>
+                                <li><a href="test-dtd-xml-transitional.html" target="content">XHTML transitional</a>
+                                <li><a href="test-dtd-xml-strict.html" target="content">XHTML strict</a>
+                            </ul>
+                    </ul>
+            </ul>
+    </ul>
+</div>
+</body>
+</html>
+<html>
+<body></body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+    <title>Test for jQuery validate() plugin</title>
+
+    <link href="css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
+    <script src="../lib/jquery.js" type="text/javascript"></script>
+    <script src="../lib/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../lib/jquery.ajaxQueue.js" type="text/javascript"></script>
+    <script src="../jquery.validate.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $().ready(function () {
+            $("#commentForm").validate();
+        });
+    </script>
+
+    <style type="text/css">
+        #commentForm {
+            width: 500px;
+        }
+
+        #commentForm label {
+            width: 250px;
+            display: block;
+            float: left;
+        }
+
+        #commentForm label.error, #commentForm input.submit {
+            margin-left: 253px;
+        }
+
+        .focus {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+<form action="" class="cmxform" id="commentForm" method="get">
+    <fieldset>
+        <legend>A simple comment form with submit validation and default messages</legend>
+        <p>
+            <label for="cname-x0">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x0" name="name-x0"/>
+        <p>
+            <label for="cemail-x0">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x0" name="email-x0"/>
+        </p>
+        <p>
+            <label for="curl-x0">URL (optional)</label>
+            <input class="{url:true}" id="curl-x0" name="url-x0" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x0">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x0" name="comment-x0"></textarea>
+        </p>
+        <p>
+            <label for="cname-x1">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x1" name="name-x1"/>
+        </p>
+        <p>
+            <label for="cemail-x1">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x1" name="email-x1"/>
+        </p>
+        <p>
+            <label for="curl-x1">URL (optional)</label>
+            <input class="{url:true}" id="curl-x1" name="url-x1" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x1">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x1" name="comment-x1"></textarea>
+        </p>
+        <p>
+            <label for="cname-x2">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x2" name="name-x2"/>
+        </p>
+        <p>
+            <label for="cemail-x2">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x2" name="email-x2"/>
+        </p>
+        <p>
+            <label for="curl-x2">URL (optional)</label>
+            <input class="{url:true}" id="curl-x2" name="url-x2" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x2">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x2" name="comment-x2"></textarea>
+        </p>
+        <p>
+            <label for="cname-x3">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x3" name="name-x3"/>
+        </p>
+        <p>
+            <label for="cemail-x3">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x3" name="email-x3"/>
+        </p>
+        <p>
+            <label for="curl-x3">URL (optional)</label>
+            <input class="{url:true}" id="curl-x3" name="url-x3" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x3">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x3" name="comment-x3"></textarea>
+        </p>
+        <p>
+            <label for="cname-x4">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x4" name="name-x4"/>
+        </p>
+        <p>
+            <label for="cemail-x4">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x4" name="email-x4"/>
+        </p>
+        <p>
+            <label for="curl-x4">URL (optional)</label>
+            <input class="{url:true}" id="curl-x4" name="url-x4" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x4">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x4" name="comment-x4"></textarea>
+        </p>
+        <p>
+            <label for="cname-x5">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x5" name="name-x5"/>
+        </p>
+        <p>
+            <label for="cemail-x5">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x5" name="email-x5"/>
+        </p>
+        <p>
+            <label for="curl-x5">URL (optional)</label>
+            <input class="{url:true}" id="curl-x5" name="url-x5" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x5">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x5" name="comment-x5"></textarea>
+        </p>
+        <p>
+            <label for="cname-x6">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x6" name="name-x6"/>
+        </p>
+        <p>
+            <label for="cemail-x6">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x6" name="email-x6"/>
+        </p>
+        <p>
+            <label for="curl-x6">URL (optional)</label>
+            <input class="{url:true}" id="curl-x6" name="url-x6" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x6">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x6" name="comment-x6"></textarea>
+        </p>
+        <p>
+            <label for="cname-x7">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x7" name="name-x7"/>
+        </p>
+        <p>
+            <label for="cemail-x7">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x7" name="email-x7"/>
+        </p>
+        <p>
+            <label for="curl-x7">URL (optional)</label>
+            <input class="{url:true}" id="curl-x7" name="url-x7" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x7">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x7" name="comment-x7"></textarea>
+        </p>
+        <p>
+            <label for="cname-x8">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x8" name="name-x8"/>
+        </p>
+        <p>
+            <label for="cemail-x8">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x8" name="email-x8"/>
+        </p>
+        <p>
+            <label for="curl-x8">URL (optional)</label>
+            <input class="{url:true}" id="curl-x8" name="url-x8" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x8">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x8" name="comment-x8"></textarea>
+        </p>
+        <p>
+            <label for="cname-x9">Name (required, at least 2 characters)</label>
+            <input class="some other styles {required:true,minLength:2}" id="cname-x9" name="name-x9"/>
+        </p>
+        <p>
+            <label for="cemail-x9">E-Mail (required)</label>
+            <input class="{required:true,email:true}" id="cemail-x9" name="email-x9"/>
+        </p>
+        <p>
+            <label for="curl-x9">URL (optional)</label>
+            <input class="{url:true}" id="curl-x9" name="url-x9" value=""/>
+        </p>
+        <p>
+            <label for="ccomment-x9">Your comment (required)</label>
+            <textarea class="{required:true}" id="ccomment-x9" name="comment-x9"></textarea>
+        </p>
+        <p>
+            <input class="submit" type="submit" value="Submit"/>
+        </p>
+    </fieldset>
+</form>
+
+</body>
+</html>
